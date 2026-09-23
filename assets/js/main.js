@@ -3,18 +3,18 @@ document.documentElement.classList.add('js');
 document.addEventListener('DOMContentLoaded', () => {
   const navItems = [
     { key: 'home', href: 'index.html', label: 'Home', icon: 'fa-house', width: 'w-34' },
-    { key: 'program', href: 'program.html', label: 'Natural Synergy Program', icon: 'fa-book', width: 'w-67' },
-    { key: 'app', href: 'app.html', label: 'Natural Synergy App', icon: 'fa-mobile-screen-button', width: 'w-58' },
-    { key: 'bonus1', href: 'bonus1.html', label: 'Bonus 1 – East/West Blood Pressure Balancer', icon: 'fa-award', width: 'w-100' },
-    { key: 'bonus2', href: 'bonus2.html', label: 'Bonus 2 – Eastern Metabolism Miracle', icon: 'fa-award', width: 'w-88' },
-    { key: 'bonus3', href: 'bonus3.html', label: 'Bonus 3 – Acu-Facelift Revitalizer', icon: 'fa-award', width: 'w-79' },
-    { key: 'mastery', href: 'mastery.html', label: 'Total Life Mastery', icon: 'fa-ribbon', width: 'w-53' },
-    { key: 'vip', href: 'vip.html', label: 'VIP Club', icon: 'fa-ribbon', width: 'w-40' },
-    { key: 'wealth', href: 'wealth.html', label: 'Inner Game of Wealth', icon: 'fa-magnifying-glass-dollar', width: 'w-61' },
+    { key: 'program', href: 'natural-synergy-program.html', label: 'Natural Synergy Program', icon: 'fa-book', width: 'w-67' },
+    { key: 'app', href: 'natural-synergy-app.html', label: 'Natural Synergy App', icon: 'fa-mobile-screen-button', width: 'w-58' },
+    { key: 'bonus1', href: 'bonus-1-blood-pressure-balancer.html', label: 'Bonus 1 – East/West Blood Pressure Balancer', icon: 'fa-award', width: 'w-100' },
+    { key: 'bonus2', href: 'bonus-2-eastern-metabolism-miracle.html', label: 'Bonus 2 – Eastern Metabolism Miracle', icon: 'fa-award', width: 'w-88' },
+    { key: 'bonus3', href: 'bonus-3-acu-facelift-revitalizer.html', label: 'Bonus 3 – Acu-Facelift Revitalizer', icon: 'fa-award', width: 'w-79' },
+    { key: 'mastery', href: 'total-life-mastery.html', label: 'Total Life Mastery', icon: 'fa-ribbon', width: 'w-53' },
+    { key: 'vip', href: 'vip-club.html', label: 'VIP Club', icon: 'fa-ribbon', width: 'w-40' },
+    { key: 'wealth', href: 'inner-game-of-wealth.html', label: 'Inner Game of Wealth', icon: 'fa-magnifying-glass-dollar', width: 'w-61' },
     { key: 'settings', href: '#settings', label: 'Account Settings', icon: 'fa-gears', width: 'w-55' },
-    { key: 'tutorials', href: 'tutorials.html', label: 'Video Tutorials', icon: 'fa-video', width: 'w-49' },
+    { key: 'tutorials', href: 'video-tutorials.html', label: 'Video Tutorials', icon: 'fa-video', width: 'w-49' },
     { key: 'discovery', href: '#discovery', label: 'Discovery Form', icon: 'fa-clipboard-list', width: 'w-50' },
-    { key: 'support', href: 'support.html', label: 'Support', icon: 'fa-envelope', width: 'w-39' }
+    { key: 'support', href: 'support-request.html', label: 'Support', icon: 'fa-envelope', width: 'w-39' }
   ];
 
   const body = document.body;
