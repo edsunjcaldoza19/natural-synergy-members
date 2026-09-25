@@ -643,3 +643,262 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* ---------------------------------------------------------------
+   Preserve-first UI refinement layer
+   Keeps the existing Natural Synergy palette and content while
+   replacing rigid desktop math with a fluid, readable rhythm.
+---------------------------------------------------------------- */
+:root {
+  --page-max: 1840px;
+  --shell-gap: clamp(28px, 4.8vw, 96px);
+  --content-max: 1120px;
+  --copy-max: 68ch;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --radius-ui: 5px;
+  --shadow-soft: 0 8px 24px rgba(49, 64, 57, .08);
+}
+
+.js:not(.nav-ready) .side-nav { visibility: hidden; }
+.js.nav-ready .side-nav { visibility: visible; }
+
+body {
+  font-size: 16px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+.site-header {
+  width: min(100%, var(--page-max));
+  height: 104px;
+  margin: 0 auto;
+  padding: 14px clamp(16px, 2vw, 32px) 0;
+  align-items: flex-start;
+}
+
+.brand img { width: clamp(210px, 18vw, 273px); }
+.header-actions {
+  position: static;
+  margin-left: auto;
+  gap: clamp(18px, 3vw, 40px);
+  align-items: flex-start;
+}
+.testimonials, .open-book, .open-app-button, .download-button, .support-submit { border-radius: var(--radius-ui); }
+.testimonials { min-width: 124px; min-height: 44px; }
+.account-links { gap: 4px; padding-top: 2px; }
+.account-links a { min-height: 36px; }
+
+.page-shell,
+.program-shell, .app-shell, .bonus-shell, .vip-shell,
+.wealth-shell, .mastery-shell, .purchase-shell, .tutorials-shell, .support-shell {
+  width: min(100%, var(--page-max));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, .8vw, 24px);
+  padding-right: clamp(16px, .8vw, 24px);
+  grid-template-columns: minmax(300px, 470px) minmax(0, 1fr) !important;
+  column-gap: var(--shell-gap) !important;
+}
+
+.sidebar { width: 100%; align-self: start; }
+.sidebar-cap, .side-nav { width: 100%; }
+.sidebar-cap { margin-bottom: 12px; }
+.side-nav { margin-top: 12px; }
+.nav-link { height: 57px; }
+.nav-fill {
+  min-height: 51px;
+  padding-left: clamp(16px, 2vw, 39px);
+  padding-right: 14px;
+  font-size: 15px;
+  line-height: 1.35;
+  text-shadow: none;
+}
+.nav-link:hover .nav-fill, .nav-link:focus-visible .nav-fill { transform: translateX(2px); }
+.nav-link.active .nav-fill, .nav-link[aria-current="page"] .nav-fill {
+  background: var(--deep-olive-hover);
+  box-shadow: inset 4px 0 0 var(--orange);
+}
+.nav-icon { width: 22px; flex-basis: 22px; margin-right: 7px; font-size: 15px; }
+
+.main-content, .program-content, .app-content, .bonus-content, .vip-content,
+.wealth-content, .mastery-content, .purchase-content, .tutorials-content, .support-content {
+  width: 100%;
+  max-width: var(--content-max);
+  min-width: 0;
+}
+.main-content { padding-top: 26px; }
+h1 { font-size: clamp(25px, 2.1vw, 32px); line-height: 1.25; }
+.program-heading, .bonus-heading, .vip-heading, .wealth-heading, .tutorials-heading,
+.mastery-heading, .purchase-heading, .support-heading {
+  min-height: 58px;
+  height: auto;
+  padding: 6px 0 14px;
+}
+.program-heading h1, .bonus-heading h1, .vip-heading h1, .wealth-heading h1,
+.tutorials-heading h1, .mastery-heading h1, .purchase-heading h1, .support-heading h1 { font-size: clamp(24px, 2vw, 30px); }
+
+.welcome-title { gap: 14px; justify-content: center; text-align: center; }
+.welcome-title h1 { max-width: 32ch; }
+.intro-copy { max-width: var(--copy-max); margin-inline: auto; }
+.congratulations { margin: var(--space-6) 0 var(--space-2); font-size: 19px; }
+.quote { font-size: 16px; line-height: 1.65; }
+.lead { max-width: var(--copy-max); margin: var(--space-6) auto 0; line-height: 1.75; }
+.notice { max-width: var(--copy-max); margin: var(--space-4) auto 0; line-height: 1.75; }
+.video-section { width: min(100%, 720px); margin: var(--space-6) auto 0; }
+.video-frame { width: 100%; }
+.video-section h2 { min-height: 52px; height: auto; padding: 10px 16px; border-radius: var(--radius-ui) var(--radius-ui) 0 0; }
+.after-video { max-width: var(--copy-max); margin: var(--space-4) auto 0; line-height: 1.75; }
+.after-video p { margin-bottom: var(--space-5); }
+.quick-links { gap: var(--space-4); margin: var(--space-7) auto var(--space-7); max-width: 900px; }
+.quick-card { min-height: 230px; padding: var(--space-5) var(--space-3) var(--space-4); box-shadow: var(--shadow-soft); }
+
+.web-row, .legacy-copy { width: min(100%, 960px); }
+.web-row { margin-top: var(--space-6); gap: var(--space-5); }
+.web-right p { font-size: 16px; line-height: 1.65; margin-top: var(--space-4); }
+.web-right p + p { margin-top: var(--space-5); }
+.open-book { margin-top: var(--space-4); }
+.legacy-copy { margin: var(--space-7) auto; font-size: 16px; line-height: 1.65; }
+.legacy-copy p { margin-bottom: var(--space-5); }
+.pdf-version { min-height: 0; padding: var(--space-7) clamp(24px, 7vw, 110px); gap: clamp(32px, 6vw, 80px); }
+.pdf-details { font-size: 16px; line-height: 1.65; }
+
+.app-copy { width: min(100%, 760px); margin: var(--space-6) auto var(--space-7); font-size: 16px; line-height: 1.7; }
+.app-copy p { margin-bottom: var(--space-5); }
+.open-app-button { margin-top: var(--space-4); }
+
+.bonus-shell, .purchase-shell, .support-shell { min-height: 0 !important; }
+.bonus-row { width: min(100%, 900px); margin-top: var(--space-6); grid-template-columns: 220px minmax(0, 1fr); gap: var(--space-6); }
+.bonus-copy { font-size: 16px; line-height: 1.75; }
+.bonus-copy p { margin-bottom: var(--space-5); }
+.download-button { margin-top: var(--space-5); }
+
+.vip-shell { min-height: 0 !important; }
+.vip-intro, .vip-copy { width: min(100%, 860px); }
+.vip-intro { margin-top: var(--space-5); gap: var(--space-6); }
+.vip-copy { margin-top: var(--space-7); font-size: 16px; line-height: 1.7; }
+.vip-copy p { margin-bottom: var(--space-5); }
+
+.vip-issue-main { width: min(100%, 1040px); margin-top: var(--space-6); }
+.vip-issue-feature { grid-template-columns: minmax(250px, 320px) minmax(0, 1fr); gap: var(--space-6); }
+.vip-issue-copy { max-width: var(--copy-max); font-size: 16px; line-height: 1.7; }
+.vip-issue-copy p { margin-bottom: var(--space-4); }
+.vip-issue-audio { margin-top: var(--space-6); padding: var(--space-6) clamp(24px, 5vw, 64px); grid-template-columns: minmax(250px, 320px) minmax(0, 1fr); gap: var(--space-6); }
+.vip-issue-bonuses { margin-top: var(--space-6); }
+.vip-issue-bonus { margin-top: var(--space-6); padding-inline: clamp(16px, 4vw, 48px); }
+.vip-issue-bonus--pale { margin-top: var(--space-5); padding-top: var(--space-6); padding-bottom: var(--space-6); }
+
+.wealth-shell { min-height: 0 !important; }
+.wealth-ebook { width: min(100%, 900px); min-height: 0; margin-top: var(--space-6); grid-template-columns: 260px minmax(0, 1fr); gap: var(--space-6); padding-bottom: var(--space-7); }
+.ebook-copy, .audio-copy { font-size: 16px; line-height: 1.7; }
+.ebook-copy p, .audio-copy p { margin-bottom: var(--space-5); }
+.wealth-audio { min-height: 0; padding: var(--space-7) clamp(24px, 7vw, 110px); gap: var(--space-6); }
+
+.mastery-shell { min-height: 0 !important; }
+.mastery-section, .mastery-section--guide { min-height: 0; padding: var(--space-7) clamp(28px, 6vw, 100px); gap: var(--space-6); }
+.mastery-copy { font-size: 16px; line-height: 1.7; }
+.mastery-copy p { margin-bottom: var(--space-4); }
+.mastery-copy h2 { margin-bottom: var(--space-4); }
+
+.purchase-main { width: min(100%, 900px); margin-top: var(--space-6); }
+.purchase-intro { grid-template-columns: minmax(250px, 320px) minmax(0, 1fr); gap: var(--space-6); }
+.purchase-copy { font-size: 16px; line-height: 1.75; }
+.purchase-copy p { margin-bottom: var(--space-5); }
+.purchase-cta { margin-top: var(--space-6); }
+
+.tutorials-panel { width: min(100%, 960px); margin-top: var(--space-5); }
+.tutorial-cell { padding: var(--space-3); }
+.pain-guide { padding: var(--space-4); }
+.coming-soon { margin: var(--space-4) 0 var(--space-6); }
+
+.support-shell { min-height: 0 !important; }
+.support-intro { margin-top: var(--space-5); font-size: 16px; }
+.support-form { width: min(100%, 760px); margin-top: var(--space-6); }
+.support-field { margin-bottom: var(--space-3); }
+.support-field input { height: 58px; }
+.support-field textarea { min-height: 220px; }
+.support-submit { min-height: 58px; margin-top: var(--space-2); }
+
+.site-footer { min-height: 0 !important; margin-top: var(--space-7); padding: var(--space-7) clamp(16px, 4vw, 48px) var(--space-6); }
+.footer-links { max-width: 980px; margin: 0 auto; gap: 12px clamp(20px, 4vw, 48px); }
+.site-footer p { margin-top: var(--space-6) !important; }
+
+@media (min-width: 1200px) {
+  .sidebar { position: sticky; top: 24px; }
+}
+
+@media (max-width: 1199px) {
+  .site-header { height: 96px; }
+  .page-shell, .program-shell, .app-shell, .bonus-shell, .vip-shell,
+  .wealth-shell, .mastery-shell, .purchase-shell, .tutorials-shell, .support-shell {
+    display: block;
+    margin: 0 auto;
+    padding-inline: 20px;
+  }
+  .sidebar { max-width: 470px; margin: 0 auto var(--space-6); }
+  .sidebar-toggle { display: flex; }
+  .js .side-nav { display: none; }
+  .js .sidebar.is-open .side-nav { display: block; }
+  .main-content, .program-content, .app-content, .bonus-content, .vip-content,
+  .wealth-content, .mastery-content, .purchase-content, .tutorials-content, .support-content {
+    max-width: 1120px;
+    margin-inline: auto;
+    padding-top: var(--space-4);
+  }
+  .nav-fill { width: 100% !important; }
+  .site-footer { margin-top: var(--space-5); }
+}
+
+@media (max-width: 767px) {
+  body { font-size: 16px; }
+  .site-header { min-height: 88px; height: auto; padding: 12px 16px; gap: 12px; align-items: center; }
+  .brand img { width: 195px; }
+  .header-actions { gap: 12px; }
+  .testimonials { min-width: 0; padding-inline: 11px; font-size: 13px; }
+  .page-shell, .program-shell, .app-shell, .bonus-shell, .vip-shell,
+  .wealth-shell, .mastery-shell, .purchase-shell, .tutorials-shell, .support-shell { padding-inline: 12px; }
+  .sidebar { margin-bottom: var(--space-5); }
+  .sidebar-cap { height: 50px; }
+  .nav-link { height: auto; min-height: 56px; }
+  .nav-fill { min-height: 50px; padding: 11px 15px; font-size: 15px; white-space: normal; }
+  .main-content, .program-content, .app-content, .bonus-content, .vip-content,
+  .wealth-content, .mastery-content, .purchase-content, .tutorials-content, .support-content { padding-top: 8px; }
+  .program-heading, .bonus-heading, .vip-heading, .wealth-heading, .tutorials-heading,
+  .mastery-heading, .purchase-heading, .support-heading { justify-content: flex-start; padding-block: 8px 12px; }
+  .program-heading h1, .bonus-heading h1, .vip-heading h1, .wealth-heading h1,
+  .tutorials-heading h1, .mastery-heading h1, .purchase-heading h1, .support-heading h1 { font-size: 22px; }
+  .web-row, .vip-intro, .wealth-ebook, .wealth-audio, .top-tutorials,
+  .bonus-row, .vip-issue-feature, .vip-issue-audio, .mastery-section, .mastery-section--reverse,
+  .purchase-intro, .pdf-version { grid-template-columns: 1fr; }
+  .web-row, .legacy-copy, .vip-intro, .wealth-ebook, .tutorials-panel, .bonus-row, .purchase-main { max-width: 100%; }
+  .welcome-title { align-items: center; justify-content: center; text-align: center; }
+  .welcome-title h1 { font-size: 24px; }
+  .desktop-break { display: none; }
+  .congratulations { margin-top: var(--space-5); font-size: 17px; }
+  .lead, .notice { margin-top: var(--space-5); }
+  .video-section { margin-top: var(--space-5); }
+  .quick-links { grid-template-columns: 1fr; margin-block: var(--space-6); }
+  .pdf-version { padding: var(--space-6) 22px; }
+  .bonus-row { gap: var(--space-4); margin-top: var(--space-5); }
+  .bonus-cover img { width: min(180px, 100%); }
+  .vip-image { margin-inline: auto; }
+  .vip-copy { margin-top: var(--space-6); }
+  .vip-issue-main { margin-top: var(--space-5); }
+  .vip-issue-audio { padding: var(--space-5) 20px; }
+  .vip-issue-cover, .vip-issue-cds { margin-top: var(--space-4); }
+  .vip-issue-bonus { padding-inline: 8px; }
+  .wealth-audio { padding: var(--space-6) 20px; }
+  .mastery-section, .mastery-section--reverse { padding: var(--space-6) 18px; gap: var(--space-5); }
+  .mastery-section--reverse .mastery-visual, .mastery-section--reverse .mastery-copy { order: initial; }
+  .purchase-main { margin-top: var(--space-5); }
+  .support-form { max-width: 100%; margin-top: var(--space-5); }
+  .support-field input { height: 56px; }
+  .support-field textarea { min-height: 190px; }
+  .site-footer { padding-top: var(--space-6); }
+  .footer-links { gap: 8px 22px; }
+}

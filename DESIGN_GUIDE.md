@@ -71,6 +71,21 @@ video-tutorials
 support-request
 ```
 
+## UI refinement addendum
+
+The preserve-first redesign keeps the existing light theme, olive/orange brand palette, copy, imagery, routes, and navigation order. Visual improvements are implemented through the shared stylesheet and script only.
+
+- Design dials: variance 4/10, motion 2/10, density 4/10.
+- Wide desktop (`min-width: 1200px`) keeps the recognizable sidebar/content relationship while using a fluid shell gap instead of a fixed whitespace column.
+- Tablet (`768px-1199px`) stacks the shell and exposes the accessible sidebar toggle.
+- Mobile (`max-width: 767px`) uses full-width content, wrapped navigation labels, 16px body text, and 44px minimum controls.
+- Body copy uses a readable 16px base with approximately 1.6-1.75 line-height and a 65-68 character measure for long-form text.
+- Shared spacing follows an 8px base rhythm. Page sections are content-driven; fixed minimum heights are avoided unless a media aspect ratio requires reserved space.
+- Header actions, sidebar rows, headings, grids, media, forms, and footer links use fluid widths and consistent 4-5px corner radii.
+- Hover and focus states use restrained transitions. Reduced-motion users receive static states.
+- No visible copy, images, routes, form fields, package IDs, embeds, or footer destinations may be added or rewritten during visual refinements.
+- Validation must cover 1440px, 1200px, 1024px, 768px, and 375px, plus keyboard navigation, focus visibility, active navigation, contrast, and horizontal-overflow checks.
+
 Nested pages one directory below the root, such as `vip-club/issue-1.html`, must set `data-root-prefix="../"` on `<body>`. `main.js` uses that value when generating sidebar destinations.
 
 ## 3. Page shell standard

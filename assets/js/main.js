@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { key: 'discovery', href: '#discovery', label: 'Discovery Form', icon: 'fa-clipboard-list', width: 'w-50' },
     { key: 'support', href: 'support-request.html', label: 'Support', icon: 'fa-envelope', width: 'w-39' }
   ];
-  navItems[3].label = 'Bonus 1 - East/West Blood Pressure Balancer';
-  navItems[4].label = 'Bonus 2 - Eastern Metabolism Miracle';
-  navItems[5].label = 'Bonus 3 - Acu-Facelift Revitalizer';
+  navItems[3].label = 'Bonus 1 \u2013 East/West Blood Pressure Balancer';
+  navItems[4].label = 'Bonus 2 \u2013 Eastern Metabolism Miracle';
+  navItems[5].label = 'Bonus 3 \u2013 Acu-Facelift Revitalizer';
 
   const body = document.body;
   const imageDimensions = {
@@ -88,14 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
       return `<a class="nav-link${active ? ' active' : ''}" href="${href}" data-nav-key="${item.key}"${active ? ' aria-current="page"' : ''}><span class="nav-fill ${item.width}"><i class="fa-solid ${item.icon} nav-icon" aria-hidden="true"></i><span>${item.label}</span></span></a>`;
     }).join('');
 
-    const toggle = document.createElement('button');
-    toggle.className = 'sidebar-toggle';
-    toggle.type = 'button';
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-controls', 'member-navigation');
-    toggle.innerHTML = '<span>Member menu</span><i class="fa-solid fa-bars" aria-hidden="true"></i>';
+    let toggle = sidebar.querySelector('.sidebar-toggle');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.className = 'sidebar-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-controls', 'member-navigation');
+      toggle.innerHTML = '<span>Member menu</span><i class="fa-solid fa-bars" aria-hidden="true"></i>';
+      sidebar.insertBefore(toggle, nav);
+    }
     nav.id = 'member-navigation';
-    sidebar.insertBefore(toggle, nav);
+    document.documentElement.classList.add('nav-ready');
 
     const setMenuState = (open) => {
       sidebar.classList.toggle('is-open', open);
@@ -105,10 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
       icon.classList.toggle('fa-xmark', open);
     };
 
-    toggle.addEventListener('click', () => setMenuState(!sidebar.classList.contains('is-open')));
-    nav.addEventListener('click', (event) => {
-      if (event.target.closest('a') && window.matchMedia('(max-width: 1050px)').matches) setMenuState(false);
-    });
+    if (!toggle.dataset.bound) {
+      toggle.addEventListener('click', () => setMenuState(!sidebar.classList.contains('is-open')));
+      nav.addEventListener('click', (event) => {
+        if (event.target.closest('a') && window.matchMedia('(max-width: 1199px)').matches) setMenuState(false);
+      });
+      toggle.dataset.bound = 'true';
+    }
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && sidebar.classList.contains('is-open')) {
         setMenuState(false);
@@ -116,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     document.addEventListener('click', (event) => {
-      if (window.matchMedia('(max-width: 1050px)').matches && sidebar.classList.contains('is-open') && !sidebar.contains(event.target)) setMenuState(false);
+      if (window.matchMedia('(max-width: 1199px)').matches && sidebar.classList.contains('is-open') && !sidebar.contains(event.target)) setMenuState(false);
     });
   }
 
