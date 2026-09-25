@@ -9,6 +9,7 @@
   --muted-text: #505950;
   --line: #a7b98b;
   --panel: #e2e0d5;
+  --warm-panel: #fff1df;
   --focus: #ffb13b;
 }
 
@@ -81,6 +82,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   border-bottom: 5px solid #fff;
   box-shadow: 0 5px 0 var(--deep-olive), 0 10px 0 #fff, 0 12px 0 var(--deep-olive);
 }
+.sidebar-cap--greeting { padding: 0 30px; display: flex; align-items: center; color: #fff; font-size: 15px; }
 .sidebar-toggle {
   width: 100%;
   min-height: 48px;
@@ -259,6 +261,47 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
 .vip-copy a { color: #dc7200; text-decoration: underline; }
 .vip-copy .shortcode { margin-top: 43px; line-height: 1.4; }
 
+/* VIP Club issue detail */
+.vip-issue-content { padding-top: 10px; }
+.vip-issue-heading { height: 50px; }
+.vip-issue-heading h1 { color: var(--olive); font-size: 26px; }
+.vip-issue-main { width: min(930px, calc(100% - 30px)); margin: 37px auto 0; }
+.vip-issue-feature { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 34px; align-items: start; }
+.vip-issue-feature h2, .vip-issue-audio h2 { margin: 0; color: var(--olive-heading); font-size: 21px; line-height: 1.35; font-weight: 500; text-align: center; }
+.vip-issue-cover { width: 221px; height: auto; margin: 48px auto 0; display: block; filter: drop-shadow(0 12px 7px rgba(0, 0, 0, .16)); }
+.vip-issue-cover--issue-2 { width: 214px; }
+.vip-issue-cover--issue-3 { width: 233px; }
+.vip-issue-cover--issue-4 { width: 233px; }
+.vip-issue-cover--issue-5 { width: 233px; }
+.vip-issue-cover--issue-6 { width: 233px; }
+.vip-issue-cover--issue-7 { width: 233px; }
+.vip-issue-cover--issue-8 { width: 233px; }
+.vip-issue-cover--issue-9 { width: 233px; }
+.vip-issue-cover--issue-10 { width: 233px; }
+.vip-issue-cover--issue-11 { width: 233px; }
+.vip-issue-cover--issue-12 { width: 233px; }
+.vip-issue-copy { color: #59615c; font-size: 15px; line-height: 1.65; }
+.vip-issue-copy p { margin: -4px 0 22px; }
+.vip-issue-copy ul { margin: 14px 0 28px; padding-left: 18px; }
+.vip-issue-copy li { margin: 5px 0; }
+.vip-issue-copy .shortcode, .vip-issue-audio .shortcode, .vip-issue-bonus .shortcode { color: #59615c; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
+.vip-issue-audio { margin-top: 40px; padding: 42px 54px 44px; display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 34px; background: var(--panel); }
+.vip-issue-audio h2 { margin-top: 0; }
+.vip-issue-cds { width: 300px; height: auto; margin: 52px auto 0; display: block; }
+.vip-issue-bonuses { margin: 37px 0 0; text-align: center; }
+.vip-issue-bonuses h2 { margin: 0; color: var(--olive-heading); font-size: 22px; font-weight: 700; }
+.vip-issue-bonuses h2 span { color: var(--orange); }
+.page-vip-issue-2 .vip-issue-bonuses h2 span, .page-vip-issue-4 .vip-issue-bonuses h2 span, .page-vip-issue-5 .vip-issue-bonuses h2 span, .page-vip-issue-6 .vip-issue-bonuses h2 span, .page-vip-issue-8 .vip-issue-bonuses h2 span, .page-vip-issue-9 .vip-issue-bonuses h2 span, .page-vip-issue-10 .vip-issue-bonuses h2 span, .page-vip-issue-12 .vip-issue-bonuses h2 span { position: relative; display: inline-block; }
+.page-vip-issue-2 .vip-issue-bonuses h2 span::after, .page-vip-issue-4 .vip-issue-bonuses h2 span::after, .page-vip-issue-5 .vip-issue-bonuses h2 span::after, .page-vip-issue-6 .vip-issue-bonuses h2 span::after, .page-vip-issue-8 .vip-issue-bonuses h2 span::after, .page-vip-issue-9 .vip-issue-bonuses h2 span::after, .page-vip-issue-10 .vip-issue-bonuses h2 span::after, .page-vip-issue-12 .vip-issue-bonuses h2 span::after { content: ""; width: 108%; height: 10px; position: absolute; left: -4%; bottom: -8px; border-top: 3px solid var(--orange); border-radius: 50%; transform: rotate(-3deg); }
+.vip-issue-bonus { margin-top: 65px; padding: 0 40px; color: #59615c; text-align: left; }
+.vip-issue-bonus h3 { margin: 0 0 35px; color: var(--orange); font-size: 21px; font-weight: 500; text-align: center; }
+.vip-issue-bonus p { margin: 0 0 27px; font-size: 15px; line-height: 1.65; }
+.vip-issue-bonus--pale { margin-top: 47px; padding-top: 40px; padding-bottom: 40px; background: var(--warm-panel); }
+.vip-issue-bonus--pale h3 { margin-bottom: 34px; }
+.vip-issue-bonus--pale .shortcode { text-align: center; }
+.vip-issue-author { margin: -27px 0 31px; color: var(--text); font-size: 12px; font-weight: 700; text-align: center; }
+.page-vip-issue-3 .vip-issue-feature .vip-issue-copy p { margin-bottom: 27px; }
+
 /* Wealth */
 .wealth-content { padding-top: 10px; }
 .wealth-heading { height: 50px; }
@@ -317,6 +360,61 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
 .mastery-copy .shortcode { margin: 28px 0 0; color: #495149; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
 .mastery-shell + .site-footer { min-height: 310px; padding-top: 99px; }
 .mastery-shell + .site-footer p { margin-top: 84px; }
+
+/* Inner Game of Wealth purchase */
+.purchase-shell {
+  min-height: 846px;
+  grid-template-columns: 470px minmax(0, 1fr);
+  column-gap: 12px;
+  margin-left: 8px;
+  margin-right: 20px;
+  align-items: start;
+}
+.purchase-content { width: 100%; min-width: 0; padding-top: 10px; }
+.purchase-heading {
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  border-bottom: 1px solid var(--line);
+}
+.purchase-heading img { width: 45px; height: 46px; }
+.purchase-heading h1 { color: var(--olive); font-size: 26px; font-weight: 400; }
+.purchase-main { width: 780px; max-width: calc(100% - 28px); margin: 48px auto 0; }
+.purchase-intro { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 35px; align-items: start; }
+.purchase-visual { text-align: center; }
+.purchase-visual h2 { margin: 0 0 47px; color: #111c2b; font-size: 18px; font-weight: 500; line-height: 1.35; }
+.purchase-visual img { width: 390px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.page-purchase-mastery .purchase-visual img { width: 360px; }
+.purchase-copy { color: #27332d; font-size: 16px; line-height: 2; }
+.purchase-copy p { margin: -7px 0 35px; }
+.purchase-copy p + p { margin-top: 36px; }
+.purchase-copy ul { margin: -8px 0 9px; padding-left: 23px; }
+.purchase-copy li { margin: 4px 0; }
+.purchase-copy li::marker { color: var(--orange); font-size: 1.1em; }
+.purchase-cta { margin-top: 54px; }
+.purchase-cta h2 { height: 40px; margin: 0; display: flex; align-items: center; justify-content: center; background: var(--orange); color: #fff; font-size: 18px; font-weight: 500; }
+.purchase-button {
+  min-height: 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  overflow: hidden;
+  background: #c5c8a6;
+  color: #10172a;
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+.purchase-button::before { content: ""; width: 76px; height: 76px; position: absolute; top: 0; right: 0; background: var(--orange); clip-path: polygon(100% 0, 0 0, 100% 100%); }
+.purchase-button i { color: #414859; font-size: 43px; }
+.purchase-button span { font-size: 16px; font-weight: 700; text-decoration: underline; }
+.purchase-button:hover { background: #b9bd97; }
+.purchase-shell + .site-footer { min-height: 316px; padding-top: 108px; }
+.purchase-shell + .site-footer p { margin-top: 81px; }
 
 /* Tutorials */
 .tutorials-content { padding-top: 10px; }
@@ -422,13 +520,13 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
   .site-header { height: 105px; padding: 12px 20px 0; }
   .brand img { width: 230px; }
   .header-actions { position: static; gap: 15px; }
-  .page-shell, .program-shell, .app-shell, .bonus-shell, .vip-shell, .wealth-shell, .mastery-shell, .tutorials-shell, .support-shell { display: block; min-height: 0; margin: 0 20px; }
+  .page-shell, .program-shell, .app-shell, .bonus-shell, .vip-shell, .wealth-shell, .mastery-shell, .purchase-shell, .tutorials-shell, .support-shell { display: block; min-height: 0; margin: 0 20px; }
   .sidebar { width: min(470px, 100%); margin: 0 auto 32px; }
   .sidebar-cap, .side-nav { width: 100%; }
   .sidebar-toggle { display: flex; }
   .js .side-nav { display: none; }
   .js .sidebar.is-open .side-nav { display: block; }
-  .main-content, .program-content, .app-content, .bonus-content, .vip-content, .wealth-content, .mastery-content, .tutorials-content, .support-content { width: min(900px, 100%); margin: 0 auto; padding-top: 15px; }
+  .main-content, .program-content, .app-content, .bonus-content, .vip-content, .wealth-content, .mastery-content, .purchase-content, .tutorials-content, .support-content { width: min(900px, 100%); margin: 0 auto; padding-top: 15px; }
   .page-home .main-content { width: min(700px, 100%); }
   .nav-fill { width: 100% !important; min-height: 53px; }
   .video-section, .video-frame { width: 100%; }
@@ -437,13 +535,18 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
 }
 
 @media (max-width: 700px) {
-  .program-shell, .bonus-shell, .vip-shell, .wealth-shell, .mastery-shell, .tutorials-shell, .support-shell { margin: 0 12px; }
-  .program-heading h1, .vip-heading h1, .wealth-heading h1, .mastery-heading h1, .tutorials-heading h1, .support-heading h1 { font-size: 22px; }
+  .program-shell, .bonus-shell, .vip-shell, .wealth-shell, .mastery-shell, .purchase-shell, .tutorials-shell, .support-shell { margin: 0 12px; }
+  .program-heading h1, .vip-heading h1, .wealth-heading h1, .mastery-heading h1, .purchase-heading h1, .tutorials-heading h1, .support-heading h1 { font-size: 22px; }
   .web-row, .vip-intro, .wealth-ebook, .wealth-audio, .top-tutorials { grid-template-columns: 1fr; }
   .web-row, .legacy-copy, .vip-intro, .wealth-ebook, .tutorials-panel { max-width: 100%; }
   .pdf-version { min-height: 0; grid-template-columns: 1fr; gap: 35px; padding: 30px 22px 50px; }
   .vip-image { width: min(300px, 100%); margin: 0 auto; order: -1; }
   .vip-copy { max-width: 100%; margin-top: 45px; }
+  .vip-issue-main { width: 100%; }
+  .vip-issue-feature, .vip-issue-audio { grid-template-columns: 1fr; }
+  .vip-issue-audio { padding: 35px 28px 42px; }
+  .vip-issue-cover, .vip-issue-cds { margin-top: 28px; }
+  .vip-issue-bonus { padding: 0 20px; }
   .wealth-ebook { min-height: 0; margin-bottom: 55px; }
   .wealth-audio { gap: 35px; padding: 35px 20px 50px; }
   .ebook-visual img { margin-top: 35px; }
@@ -452,6 +555,13 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
   .mastery-section--reverse .mastery-visual, .mastery-section--reverse .mastery-copy { order: initial; }
   .mastery-copy { max-width: 650px; margin: 0 auto; }
   .mastery-copy h2 { text-align: center; }
+  .purchase-main { max-width: 100%; margin-top: 34px; }
+  .purchase-intro { grid-template-columns: 1fr; gap: 30px; }
+  .purchase-visual h2 { margin-bottom: 26px; }
+  .purchase-visual img { width: min(390px, 100%); }
+  .purchase-copy { font-size: 15px; line-height: 1.65; }
+  .purchase-copy p, .purchase-copy p + p { margin: 0 0 25px; }
+  .purchase-cta { margin-top: 30px; }
   .tutorial-cell + .tutorial-cell { border-left: 0; border-top: 1px solid #555; }
   .pain-guide { padding-left: 8px; padding-right: 8px; }
   .pain-guide, .audio-links { font-size: 14px; }
@@ -490,6 +600,13 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
   .bonus-heading { height: auto; min-height: 58px; gap: 10px; }
   .bonus-heading img { width: 40px; height: 41px; }
   .bonus-heading h1 { font-size: 21px; }
+  .vip-issue-heading { height: auto; min-height: 58px; gap: 10px; }
+  .vip-issue-heading h1 { font-size: 21px; }
+  .vip-issue-feature h2, .vip-issue-audio h2 { font-size: 20px; }
+  .vip-issue-copy { font-size: 15px; line-height: 1.6; }
+  .vip-issue-bonus { margin-top: 48px; padding: 0 8px; }
+  .vip-issue-bonus h3 { font-size: 19px; }
+  .vip-issue-bonus--pale { margin-left: -12px; margin-right: -12px; padding: 32px 20px 36px; }
   .mastery-heading { height: auto; min-height: 58px; gap: 10px; }
   .mastery-heading img { width: 40px; height: 41px; }
   .mastery-heading h1 { font-size: 21px; }
@@ -497,6 +614,12 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
   .mastery-copy { font-size: 15px; line-height: 1.6; }
   .mastery-copy h2 { margin-bottom: 21px; font-size: 20px; }
   .mastery-visual img { max-width: min(300px, 100%); }
+  .purchase-heading { height: auto; min-height: 58px; gap: 10px; }
+  .purchase-heading img { width: 40px; height: 41px; }
+  .purchase-heading h1 { font-size: 21px; }
+  .purchase-main { margin-top: 28px; }
+  .purchase-visual h2 { font-size: 18px; }
+  .purchase-button { min-height: 110px; }
   .bonus-row { grid-template-columns: 1fr; gap: 28px; max-width: 100%; margin-top: 32px; }
   .bonus-copy { font-size: 15px; line-height: 1.55; }
   .bonus-copy p { margin-bottom: 27px; }
@@ -513,7 +636,7 @@ h1 { margin: 0; color: var(--olive-heading); font-size: 28px; font-weight: 400; 
   .support-field textarea { min-height: 180px; }
   .site-footer { padding-top: 45px; }
   .footer-links { gap: 8px 24px; }
-  .site-footer p, .app-shell + .site-footer p, .bonus-shell + .site-footer p, .vip-shell + .site-footer p, .wealth-shell + .site-footer p, .mastery-shell + .site-footer p, .tutorials-shell + .site-footer p, .support-shell + .site-footer p { margin-top: 50px; }
+  .site-footer p, .app-shell + .site-footer p, .bonus-shell + .site-footer p, .vip-shell + .site-footer p, .wealth-shell + .site-footer p, .mastery-shell + .site-footer p, .purchase-shell + .site-footer p, .tutorials-shell + .site-footer p, .support-shell + .site-footer p { margin-top: 50px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

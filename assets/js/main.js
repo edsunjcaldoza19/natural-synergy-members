@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { key: 'discovery', href: '#discovery', label: 'Discovery Form', icon: 'fa-clipboard-list', width: 'w-50' },
     { key: 'support', href: 'support-request.html', label: 'Support', icon: 'fa-envelope', width: 'w-39' }
   ];
+  navItems[3].label = 'Bonus 1 - East/West Blood Pressure Balancer';
+  navItems[4].label = 'Bonus 2 - Eastern Metabolism Miracle';
+  navItems[5].label = 'Bonus 3 - Acu-Facelift Revitalizer';
 
   const body = document.body;
   const imageDimensions = {
@@ -32,7 +35,33 @@ document.addEventListener('DOMContentLoaded', () => {
     'Life-Principle-Mastery-224x300.png': [224, 300],
     'Acoustics-pack-300x175.png': [300, 175],
     'Videos-pack-300x184.png': [300, 184],
-    'Exercises-pack-300x187.png': [300, 187]
+    'Exercises-pack-300x187.png': [300, 187],
+    'Inner-Game-of-Wealth.png': [620, 350],
+    'Total-Life-Mastery-Course-1024.png': [360, 360],
+    '3D-200-Better-Issue-1-221x300.png': [221, 300],
+    'CDs-200-Better-Issue-1sm-300x206.png': [300, 206],
+    '3D-200-Better-Issue-2sm-214x300.png': [214, 300],
+    'CDs-200-Better-Issue-2sm-300x206.png': [300, 206],
+    '3D-200-Better-Issue-3.png': [233, 300],
+    'CDs-200-Better-Issue-3.png': [300, 206],
+    '3D-200-Better-Issue-4.png': [543, 700],
+    'CDs-200-Better-Issue-4.png': [700, 448],
+    '3D-200-Better-Issue-5.png': [543, 700],
+    'CDs-200-Better-Issue-5.png': [700, 448],
+    '3D-200-Better-Issue-6.png': [543, 700],
+    'CDs-200-Better-Issue-6.png': [700, 448],
+    '3D-200-Better-Issue-7.png': [543, 700],
+    'CDs-200-Better-Issue-7.png': [700, 448],
+    '3D-200-Better-Issue-8.png': [233, 300],
+    'CDs-200-Better-Issue-8.png': [300, 192],
+    '3D-200-Better-Issue-9.png': [543, 700],
+    'CDs-200-Better-Issue-9.png': [700, 448],
+    '3D-200-Better-Issue-10.png': [543, 700],
+    'CDs-200-Better-Issue-10.png': [700, 448],
+    '3D-200-Better-Issue-11.png': [543, 700],
+    'CDs-200-Better-Issue-11.png': [700, 448],
+    '3D-200-Better-Issue-12.png': [543, 700],
+    'CDs-200-Better-Issue-12.png': [700, 448]
   };
   document.querySelectorAll('img').forEach((image) => {
     const file = image.getAttribute('src')?.split('/').pop();
@@ -47,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fileName = window.location.pathname.split('/').pop() || 'index.html';
   const pageFromFile = fileName.replace('.html', '') === 'index' ? 'home' : fileName.replace('.html', '');
   const currentPage = body.dataset.page || pageFromFile;
+  const rootPrefix = body.dataset.rootPrefix || '';
   const sidebar = document.querySelector('.sidebar');
   const nav = document.querySelector('.side-nav');
 
@@ -54,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.setAttribute('aria-label', 'Member navigation');
     nav.innerHTML = navItems.map((item) => {
       const active = item.key === currentPage;
-      return `<a class="nav-link${active ? ' active' : ''}" href="${item.href}" data-nav-key="${item.key}"${active ? ' aria-current="page"' : ''}><span class="nav-fill ${item.width}"><i class="fa-solid ${item.icon} nav-icon" aria-hidden="true"></i><span>${item.label}</span></span></a>`;
+      const href = item.href.startsWith('#') ? item.href : `${rootPrefix}${item.href}`;
+      return `<a class="nav-link${active ? ' active' : ''}" href="${href}" data-nav-key="${item.key}"${active ? ' aria-current="page"' : ''}><span class="nav-fill ${item.width}"><i class="fa-solid ${item.icon} nav-icon" aria-hidden="true"></i><span>${item.label}</span></span></a>`;
     }).join('');
 
     const toggle = document.createElement('button');
